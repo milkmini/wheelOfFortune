@@ -1,7 +1,7 @@
 // --function
 //  Save to history
 function toLocal() {
-    let arr = { 'cumBefore': amount, ' cumAfter': savedSumValue };
+    let arr = {' cumAfter': savedSumValue, 'cumBefore': amount };
     let oldItems = JSON.parse(localStorage.getItem('arr')) || [];
     oldItems.push(arr);
     localStorage.setItem('arr', JSON.stringify(oldItems))
@@ -19,7 +19,6 @@ const ComplexityMath = () => {
     let count = localStorage.getItem('count');
     return Math.floor(count * Math.random()) + 1;
 }
-
 // Choice of difficulty mode
 const Сomplexity = (count) => {
     let out = 'Угадай число от 1 до ' + count;
@@ -37,7 +36,6 @@ const getValue = (get) => {
 const setValue = (set, value) => {
     return localStorage.setItem(set, value);
 }
-
 // выводим значение инпута
 const valueInput = (id) => {
     return document.getElementById(id).value;
@@ -72,13 +70,14 @@ document.getElementById('save').onclick = function () {
             }
         }
         ElementIdAdd('disableSum');
+        ElementIdAdd('disableСomplexity');
     }
 }
 // Number check
 document.getElementById('check').onclick = function () {
     let userNumber = valueInput('userNumbers');
     if (!userNumber || !valueInput('userCum')) {
-        alert('Укажите число от 1 до 2');
+        alert('Укажите число от 1 до 2 и не забудьте ввести сумму');
     } else {
         userNumber = parseInt(userNumber);
         if (userNumber == winNumber) {
