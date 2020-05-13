@@ -1,0 +1,15 @@
+.section {
+    margin: 50px 50px;
+    padding: 20px;
+    border: 1px solid black;
+    display: inline-block;
+}
+.disable {
+    display: none;
+}
+#donate {
+    margin-bottom: 20px;
+}
+.Complexity {
+    margin-left: 50px;
+}
